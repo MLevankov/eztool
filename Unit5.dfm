@@ -3,7 +3,7 @@ object Form5: TForm5
   Top = 0
   BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
-  ClientHeight = 196
+  ClientHeight = 276
   ClientWidth = 383
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -12,6 +12,7 @@ object Form5: TForm5
   Font.Name = 'Segoe UI'
   Font.Style = []
   Position = poScreenCenter
+  OnCreate = FormCreate
   TextHeight = 15
   object Label1: TLabel
     Left = 112
@@ -202,9 +203,20 @@ object Form5: TForm5
     Font.Style = [fsUnderline]
     ParentFont = False
   end
-  object Timer1: TTimer
-    OnTimer = Timer1Timer
-    Left = 344
-    Top = 160
+  object Button1: TButton
+    Left = 8
+    Top = 197
+    Width = 367
+    Height = 71
+    Cursor = crHandPoint
+    Caption = #1057#1072#1081#1090' '#1072#1074#1090#1086#1088#1072
+    Font.Charset = RUSSIAN_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -19
+    Font.Name = 'Segoe UI Semibold'
+    Font.Style = [fsBold, fsUnderline]
+    ParentFont = False
+    TabOrder = 0
+    OnClick = Button1Click
   end
 end

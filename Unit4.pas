@@ -93,7 +93,6 @@ begin
     title[i] := chr(random(20) + ord('a'));
 
   caption := title;
-  sleep(500)
 end;
 
 end.

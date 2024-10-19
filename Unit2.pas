@@ -4,11 +4,11 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.StdCtrls, Registry;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.StdCtrls, Registry,
+  Vcl.Menus, ShellAPI;
 
 type
   TForm2 = class(TForm)
-    Timer1: TTimer;
     Label1: TLabel;
     CheckBox1: TCheckBox;
     CheckBox2: TCheckBox;
@@ -22,8 +22,23 @@ type
     RadioButton1: TRadioButton;
     RadioButton2: TRadioButton;
     Button1: TButton;
+    MainMenu1: TMainMenu;
+    N1: TMenuItem;
+    N2: TMenuItem;
+    N3: TMenuItem;
+    N4: TMenuItem;
+    N5: TMenuItem;
+    N6: TMenuItem;
+    CheckBox8: TCheckBox;
+    N7: TMenuItem;
+    N8: TMenuItem;
     procedure Timer1Timer(Sender: TObject);
     procedure Button1Click(Sender: TObject);
+    procedure N2Click(Sender: TObject);
+    procedure N4Click(Sender: TObject);
+    procedure N6Click(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure N8Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -38,6 +53,8 @@ var
 implementation
 
 {$R *.dfm}
+
+uses Unit5, Unit6;
 
 procedure TForm2.Button1Click(Sender: TObject);
 var reg: TRegistry;
@@ -100,6 +117,14 @@ begin
     reg.CloseKey();
   end;
 
+  if CheckBox8.Checked then begin
+    reg.RootKey := HKEY_CURRENT_USER;
+    reg.OpenKey('SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System', true);
+    reg.DeleteValue('DisableRegistryTools');
+
+    reg.CloseKey();
+  end;
+
   if RadioButton2.Checked then begin
     WinExec(PANsiChar('shutdown /f /r /t 0'), SW_HIDE);
   end;
@@ -107,7 +132,7 @@ begin
   reg.Free();
 end;
 
-procedure TForm2.Timer1Timer(Sender: TObject);
+procedure TForm2.FormCreate(Sender: TObject);
 var i: integer;
 begin
   randomize;
@@ -118,7 +143,32 @@ begin
     title[i] := chr(random(20) + ord('a'));
 
   caption := title;
-  sleep(500)
+end;
+
+procedure TForm2.N2Click(Sender: TObject);
+begin
+  Application.Terminate();
+end;
+
+procedure TForm2.N4Click(Sender: TObject);
+begin
+  ShellExecute(Application.Handle, 'open', 'https://mlevankov.taplink.ws/', nil, nil, SW_NORMAL);
+end;
+
+procedure TForm2.N6Click(Sender: TObject);
+begin
+  Form5.Show();
+end;
+
+procedure TForm2.N8Click(Sender: TObject);
+begin
+  Form2.Hide();
+  Form6.Show();
+end;
+
+procedure TForm2.Timer1Timer(Sender: TObject);
+begin
+  // Unsupported
 end;
 
 end.

@@ -13,6 +13,7 @@ object Form1: TForm1
   Font.Style = []
   Position = poScreenCenter
   Visible = True
+  OnCreate = FormCreate
   TextHeight = 15
   object Label1: TLabel
     Left = 208
@@ -62,9 +63,5 @@ object Form1: TForm1
     Caption = #1055#1088#1086#1074#1077#1088#1082#1072' '#1084#1086#1097#1085#1086#1089#1090#1080' '#1055#1050' ('#1073#1086#1085#1091#1089')'
     TabOrder = 3
     OnClick = Button4Click
-  end
-  object Timer1: TTimer
-    OnTimer = Timer1Timer
-    Left = 792
   end
 end

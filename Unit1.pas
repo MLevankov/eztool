@@ -8,7 +8,6 @@ uses
 
 type
   TForm1 = class(TForm)
-    Timer1: TTimer;
     Label1: TLabel;
     Button1: TButton;
     Button3: TButton;
@@ -19,6 +18,7 @@ type
     procedure Button3Click(Sender: TObject);
     procedure Button4Click(Sender: TObject);
     procedure Button5Click(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
   public
@@ -34,11 +34,11 @@ implementation
 
 {$R *.dfm}
 
-uses Unit2, Unit3, Unit4, Unit5;
+uses Unit3, Unit4, Unit5, Unit6;
 
 procedure TForm1.Button1Click(Sender: TObject);
 begin
-  Form2.Show();
+  Form6.Show();
 end;
 
 procedure TForm1.Button3Click(Sender: TObject);
@@ -56,7 +56,7 @@ begin
   Form5.Show();
 end;
 
-procedure TForm1.Timer1Timer(Sender: TObject);
+procedure TForm1.FormCreate(Sender: TObject);
 var i: integer;
 begin
   randomize;
@@ -67,7 +67,11 @@ begin
     title[i] := chr(random(20) + ord('a'));
 
   caption := title;
-  sleep(500)
+end;
+
+procedure TForm1.Timer1Timer(Sender: TObject);
+begin
+  // Unsupported
 end;
 
 end.

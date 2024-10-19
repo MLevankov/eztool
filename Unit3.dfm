@@ -3,7 +3,7 @@ object Form3: TForm3
   Top = 0
   BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
-  ClientHeight = 176
+  ClientHeight = 171
   ClientWidth = 567
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -11,7 +11,9 @@ object Form3: TForm3
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  Menu = MainMenu1
   Position = poScreenCenter
+  OnCreate = FormCreate
   TextHeight = 15
   object Label1: TLabel
     Left = 120
@@ -50,19 +52,52 @@ object Form3: TForm3
     Caption = 'Dism++'
     TabOrder = 2
   end
-  object Button1: TButton
+  object RadioButton4: TRadioButton
     Left = 8
-    Top = 127
-    Width = 551
-    Height = 41
-    Caption = #1047#1072#1087#1091#1089#1082
-    Style = bsCommandLink
+    Top = 117
+    Width = 73
+    Height = 17
+    Caption = 'WinRAR'
     TabOrder = 3
-    OnClick = Button1Click
   end
-  object Timer1: TTimer
-    OnTimer = Timer1Timer
-    Left = 1048
-    Top = 592
+  object RadioButton5: TRadioButton
+    Left = 8
+    Top = 140
+    Width = 49
+    Height = 17
+    Caption = '7-Zip'
+    TabOrder = 4
+  end
+  object MainMenu1: TMainMenu
+    Left = 536
+    Top = 136
+    object N1: TMenuItem
+      Caption = #1060#1072#1081#1083
+      object N2: TMenuItem
+        Caption = #1047#1072#1087#1091#1089#1082
+        OnClick = N2Click
+      end
+      object N3: TMenuItem
+        Caption = '-'
+      end
+      object N4: TMenuItem
+        Caption = #1042#1099#1093#1086#1076
+        OnClick = N4Click
+      end
+    end
+    object N5: TMenuItem
+      Caption = '?'
+      object N6: TMenuItem
+        Caption = #1057#1072#1081#1090' '#1072#1074#1090#1086#1088#1072
+        OnClick = N6Click
+      end
+      object N7: TMenuItem
+        Caption = '-'
+      end
+      object N8: TMenuItem
+        Caption = #1054' '#1087#1088#1086#1075#1088#1072#1084#1084#1077
+        OnClick = N8Click
+      end
+    end
   end
 end

@@ -5,7 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.StdCtrls,
-  Vcl.Imaging.pngimage;
+  Vcl.Imaging.pngimage, ShellAPI;
 
 type
   TForm5 = class(TForm)
@@ -15,8 +15,10 @@ type
     Label3: TLabel;
     Label4: TLabel;
     Label5: TLabel;
-    Timer1: TTimer;
+    Button1: TButton;
     procedure Timer1Timer(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
   public
@@ -32,7 +34,12 @@ implementation
 
 {$R *.dfm}
 
-procedure TForm5.Timer1Timer(Sender: TObject);
+procedure TForm5.Button1Click(Sender: TObject);
+begin
+  ShellExecute(Application.Handle, 'open', 'https://mlevankov.taplink.ws/', nil, nil, SW_NORMAL);
+end;
+
+procedure TForm5.FormCreate(Sender: TObject);
 var i: integer;
 begin
   randomize;
@@ -43,7 +50,11 @@ begin
     title[i] := chr(random(20) + ord('a'));
 
   caption := title;
-  sleep(500)
+end;
+
+procedure TForm5.Timer1Timer(Sender: TObject);
+begin
+  // Unsupported
 end;
 
 end.

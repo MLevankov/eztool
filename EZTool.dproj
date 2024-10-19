@@ -125,9 +125,10 @@
         <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_Locale>1049</VerInfo_Locale>
-        <VerInfo_Keys>CompanyName=MLevankov;FileDescription=EZTool;FileVersion=1.0.0.0;InternalName=EZTool;LegalCopyright=MLevankov;LegalTrademarks=;OriginalFilename=EZTool.exe;ProgramID=com.MLevankov.EZTool;ProductName=EZTool;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+        <VerInfo_Keys>CompanyName=MLevankov;FileDescription=EZTool;FileVersion=1.1.0.0;InternalName=EZTool;LegalCopyright=MLevankov;LegalTrademarks=;OriginalFilename=EZTool.exe;ProgramID=com.MLevankov.EZTool;ProductName=EZTool;ProductVersion=1.1.0.0;Comments=</VerInfo_Keys>
         <AppExecutionLevel>requireAdministrator</AppExecutionLevel>
         <Icon_MainIcon>$(ProjectName).Artwork\Windows\AppIcon.ico</Icon_MainIcon>
+        <VerInfo_MinorVer>1</VerInfo_MinorVer>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_Win64)'!=''">
         <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
@@ -154,6 +155,10 @@
         </DCCReference>
         <DCCReference Include="Unit5.pas">
             <Form>Form5</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Unit6.pas">
+            <Form>Form6</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <BuildConfiguration Include="Base">
