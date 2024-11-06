@@ -13,12 +13,14 @@ type
     Button3: TButton;
     Button5: TButton;
     Button4: TButton;
+    Button2: TButton;
     procedure Timer1Timer(Sender: TObject);
     procedure Button1Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);
     procedure Button4Click(Sender: TObject);
     procedure Button5Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -34,11 +36,16 @@ implementation
 
 {$R *.dfm}
 
-uses Unit3, Unit4, Unit5, Unit6;
+uses Unit3, Unit4, Unit5, Unit6, Unit7;
 
 procedure TForm1.Button1Click(Sender: TObject);
 begin
   Form6.Show();
+end;
+
+procedure TForm1.Button2Click(Sender: TObject);
+begin
+  Form7.Show();
 end;
 
 procedure TForm1.Button3Click(Sender: TObject);

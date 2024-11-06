@@ -1,18 +1,35 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BorlandProject>
 	<Transactions>
-    <Transaction>1899 12 30 00:00:00.000.807,=C:\DelphiProjects\Unit1.pas</Transaction>
-    <Transaction>1899 12 30 00:00:00.000.342,=C:\DelphiProjects\Unit1.pas</Transaction>
+    <Transaction>1899 12 30 00:00:00.000.222,=C:\DelphiProjects\Unit1.pas</Transaction>
+    <Transaction>1899 12 30 00:00:00.000.455,=C:\DelphiProjects\EZTool\Unit5.pas</Transaction>
+    <Transaction>1899 12 30 00:00:00.000.532,C:\DelphiProjects\EZTool\Project1.dproj=C:\DelphiProjects\EZTool\EZTool.dproj</Transaction>
     <Transaction>1899 12 30 00:00:00.000.483,=C:\DelphiProjects\Unit1.pas</Transaction>
     <Transaction>1899 12 30 00:00:00.000.747,=C:\DelphiProjects\EZTool\Unit3.pas</Transaction>
-    <Transaction>1899 12 30 00:00:00.000.422,C:\DelphiProjects\Unit1.pas=C:\DelphiProjects\EZTool\Unit1.pas</Transaction>
-    <Transaction>1899 12 30 00:00:00.000.222,=C:\DelphiProjects\Unit1.pas</Transaction>
-    <Transaction>1899 12 30 00:00:00.000.963,C:\DelphiProjects\Project1.dproj=C:\DelphiProjects\EZTool\Project1.dproj</Transaction>
-    <Transaction>1899 12 30 00:00:00.000.422,C:\DelphiProjects\Unit1.dfm=C:\DelphiProjects\EZTool\Unit1.dfm</Transaction>
+    <Transaction>1899 12 30 00:00:00.000.342,=C:\DelphiProjects\Unit1.pas</Transaction>
+    <Transaction>1899 12 30 00:00:00.000.807,=C:\DelphiProjects\Unit1.pas</Transaction>
+    <Transaction>1899 12 30 00:00:00.000.422,C:\DelphiProjects\EZTool\Unit1.pas=C:\DelphiProjects\Unit1.pas</Transaction>
     <Transaction>1899 12 30 00:00:00.000.511,=C:\DelphiProjects\EZTool\Unit6.pas</Transaction>
     <Transaction>1899 12 30 00:00:00.000.662,=C:\DelphiProjects\EZTool\Unit2.pas</Transaction>
-    <Transaction>1899 12 30 00:00:00.000.455,=C:\DelphiProjects\EZTool\Unit5.pas</Transaction>
-    <Transaction>1899 12 30 00:00:00.000.532,C:\DelphiProjects\EZTool\EZTool.dproj=C:\DelphiProjects\EZTool\Project1.dproj</Transaction>
+    <Transaction>1899 12 30 00:00:00.000.963,C:\DelphiProjects\EZTool\Project1.dproj=C:\DelphiProjects\Project1.dproj</Transaction>
     <Transaction>1899 12 30 00:00:00.000.030,=C:\DelphiProjects\EZTool\Unit4.pas</Transaction>
+    <Transaction>1899 12 30 00:00:00.000.422,C:\DelphiProjects\EZTool\Unit1.dfm=C:\DelphiProjects\Unit1.dfm</Transaction>
+    <Transaction>2024 11 03 20:38:42.000.167,=C:\DelphiProjects\EZTool\Unit7.pas</Transaction>
   </Transactions>
+	<ProjectSortOrder AutoSort="0" SortType="0">
+    <File Path="Unit1.pas"/>
+    <File Path="Unit1.dfm"/>
+    <File Path="Unit2.pas"/>
+    <File Path="Unit2.dfm"/>
+    <File Path="Unit3.pas"/>
+    <File Path="Unit3.dfm"/>
+    <File Path="Unit4.pas"/>
+    <File Path="Unit4.dfm"/>
+    <File Path="Unit5.pas"/>
+    <File Path="Unit5.dfm"/>
+    <File Path="Unit6.pas"/>
+    <File Path="Unit6.dfm"/>
+    <File Path="Unit7.pas"/>
+    <File Path="Unit7.dfm"/>
+  </ProjectSortOrder>
 </BorlandProject>

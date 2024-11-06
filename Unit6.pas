@@ -39,7 +39,6 @@ var
   Form6: TForm6;
   len: integer = 25;
   title: string;
-  PATH_TO_LIMITATIONS: string = 'C:\MLevankov\EZTool\limitations.txt';
 
 implementation
 
@@ -51,6 +50,7 @@ procedure TForm6.Button1Click(Sender: TObject);
 var
   reg: TRegistry;
   valueNamesA: TStrings;
+  i: integer;
 begin
   valueNamesA := TStringList.Create;
   reg := TRegistry.Create;
@@ -60,36 +60,53 @@ begin
     reg.OpenKeyReadOnly('SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System');
     reg.GetValueNames(valueNamesA);
 
-    valueNamesA.SaveToFile(PATH_TO_LIMITATIONS);
+    for i := 0 to valueNamesA.Count-1 do
+    begin
+      ListBox1.Items.Add(valueNamesA.Strings[i]);
+    end;
 
     reg.CloseKey();
 
     reg.OpenKeyReadOnly('SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer');
     reg.GetValueNames(valueNamesA);
 
-    valueNamesA.SaveToFile(PATH_TO_LIMITATIONS);
+    for i := 0 to valueNamesA.Count-1 do
+    begin
+      ListBox1.Items.Add(valueNamesA.Strings[i]);
+    end;
 
     reg.CloseKey();
 
     reg.OpenKeyReadOnly('SOFTWARE\Policies\Microsoft\Windows\System');
     reg.GetValueNames(valueNamesA);
 
-    valueNamesA.SaveToFile(PATH_TO_LIMITATIONS);
+    for i := 0 to valueNamesA.Count-1 do
+    begin
+      ListBox1.Items.Add(valueNamesA.Strings[i]);
+    end;
 
     reg.CloseKey();
 
     reg.OpenKeyReadOnly('SOFTWARE\Policies\Microsoft\Windows\Explorer');
     reg.GetValueNames(valueNamesA);
 
+    for i := 0 to valueNamesA.Count-1 do
+    begin
+      ListBox1.Items.Add(valueNamesA.Strings[i]);
+    end;
+
     reg.CloseKey();
 
     reg.OpenKeyReadOnly('SOFTWARE\Policies\Microsoft\MMC');
     reg.GetValueNames(valueNamesA);
 
+    for i := 0 to valueNamesA.Count-1 do
+    begin
+      ListBox1.Items.Add(valueNamesA.Strings[i]);
+    end;
+
     reg.CloseKey();
     reg.Free();
-
-    ListBox1.Items.LoadFromFile(PATH_TO_LIMITATIONS);
 
     valueNamesA.Free();
 
@@ -99,7 +116,10 @@ begin
     reg.OpenKeyReadOnly('SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System');
     reg.GetValueNames(valueNamesA);
 
-    valueNamesA.SaveToFile(PATH_TO_LIMITATIONS);
+    for i := 0 to valueNamesA.Count-1 do
+    begin
+      ListBox1.Items.Add(valueNamesA.Strings[i]);
+    end;
 
     reg.CloseKey();
 
@@ -108,7 +128,10 @@ begin
     reg.OpenKeyReadOnly('SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer');
     reg.GetValueNames(valueNamesA);
 
-    valueNamesA.SaveToFile(PATH_TO_LIMITATIONS);
+    for i := 0 to valueNamesA.Count-1 do
+    begin
+      ListBox1.Items.Add(valueNamesA.Strings[i]);
+    end;
 
     reg.CloseKey();
 
@@ -117,7 +140,10 @@ begin
     reg.OpenKeyReadOnly('SOFTWARE\Policies\Microsoft\Windows\System');
     reg.GetValueNames(valueNamesA);
 
-    valueNamesA.SaveToFile(PATH_TO_LIMITATIONS);
+    for i := 0 to valueNamesA.Count-1 do
+    begin
+      ListBox1.Items.Add(valueNamesA.Strings[i]);
+    end;
 
     reg.CloseKey();
 
@@ -126,6 +152,11 @@ begin
     reg.OpenKeyReadOnly('SOFTWARE\Policies\Microsoft\Windows\Explorer');
     reg.GetValueNames(valueNamesA);
 
+    for i := 0 to valueNamesA.Count-1 do
+    begin
+      ListBox1.Items.Add(valueNamesA.Strings[i]);
+    end;
+
     reg.CloseKey();
 
     reg.DeleteKey('SOFTWARE\Policies\Microsoft\Windows\Explorer');
@@ -133,13 +164,16 @@ begin
     reg.OpenKeyReadOnly('SOFTWARE\Policies\Microsoft\MMC');
     reg.GetValueNames(valueNamesA);
 
+    for i := 0 to valueNamesA.Count-1 do
+    begin
+      ListBox1.Items.Add(valueNamesA.Strings[i]);
+    end;
+
     reg.CloseKey();
 
     reg.DeleteKey('SOFTWARE\Policies\Microsoft\MMC');
 
     reg.Free();
-
-    ListBox1.Items.LoadFromFile(PATH_TO_LIMITATIONS);
 
     valueNamesA.Free();
 

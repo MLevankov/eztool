@@ -125,10 +125,10 @@
         <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_Locale>1049</VerInfo_Locale>
-        <VerInfo_Keys>CompanyName=MLevankov;FileDescription=EZTool;FileVersion=1.1.0.0;InternalName=EZTool;LegalCopyright=MLevankov;LegalTrademarks=;OriginalFilename=EZTool.exe;ProgramID=com.MLevankov.EZTool;ProductName=EZTool;ProductVersion=1.1.0.0;Comments=</VerInfo_Keys>
+        <VerInfo_Keys>CompanyName=MLevankov;FileDescription=EZTool;FileVersion=1.3.0.0;InternalName=EZTool;LegalCopyright=MLevankov;LegalTrademarks=;OriginalFilename=EZTool.exe;ProgramID=com.MLevankov.EZTool;ProductName=EZTool;ProductVersion=1.1.0.0;Comments=</VerInfo_Keys>
         <AppExecutionLevel>requireAdministrator</AppExecutionLevel>
         <Icon_MainIcon>$(ProjectName).Artwork\Windows\AppIcon.ico</Icon_MainIcon>
-        <VerInfo_MinorVer>1</VerInfo_MinorVer>
+        <VerInfo_MinorVer>3</VerInfo_MinorVer>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_Win64)'!=''">
         <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
@@ -161,6 +161,10 @@
             <Form>Form6</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="Unit7.pas">
+            <Form>Form7</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>
@@ -186,7 +190,7 @@
                     <Source Name="MainSource">EZTool.dpr</Source>
                 </Source>
             </Delphi.Personality>
-            <Deployment Version="5">
+            <Deployment Version="4">
                 <DeployFile LocalName="Win32\Debug\EZTool.exe" Configuration="Debug" Class="ProjectOutput">
                     <Platform Name="Win32">
                         <RemoteName>EZTool.exe</RemoteName>
@@ -209,6 +213,16 @@
                     </Platform>
                     <Platform Name="Win32">
                         <Operation>0</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidClasses">
+                    <Platform Name="Android">
+                        <RemoteDir>classes</RemoteDir>
+                        <Operation>64</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>classes</RemoteDir>
+                        <Operation>64</Operation>
                     </Platform>
                 </DeployClass>
                 <DeployClass Name="AndroidFileProvider">
