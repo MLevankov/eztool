@@ -25,6 +25,14 @@ type
     ListView1: TListView;
     N2: TMenuItem;
     N11: TMenuItem;
+    PageControl1: TPageControl;
+    Run: TTabSheet;
+    RunOnce: TTabSheet;
+    ListView2: TListView;
+    MSoobe: TTabSheet;
+    ListView3: TListView;
+    Winlogon: TTabSheet;
+    ListView4: TListView;
     procedure FormCreate(Sender: TObject);
     procedure N6Click(Sender: TObject);
     procedure N8Click(Sender: TObject);
@@ -61,7 +69,7 @@ begin
   SetLength(title, len);
 
   for i := 1 to len do
-    title[i] := chr(random(20) + ord('a'));
+    title[i] := chr(random(20)+ord('a'));
 
   caption := title;
 
@@ -73,6 +81,10 @@ var
   reg: TRegistry;
   valueNamesA: TStringList;
   i: integer;
+  CommaPos: integer;
+  WordStart: integer;
+  WordEnd: integer;
+  result: string;
 begin
   ListView1.Items.Clear;
 
@@ -109,6 +121,94 @@ begin
       SubItems.Add(reg.ReadString(valueNamesA[i]));
     end;
   end;
+
+  reg.CloseKey();
+
+  reg.RootKey := HKEY_CURRENT_USER;
+  reg.OpenKey('SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnce', true);
+
+  reg.GetValueNames(valueNamesA);
+
+  for i := 0 to valueNamesA.Count-1 do
+  begin
+    with ListView2.Items.Add do
+    begin
+      Caption := valueNamesA[i];
+
+      SubItems.Add(reg.ReadString(valueNamesA[i]));
+    end;
+  end;
+
+  reg.CloseKey();
+
+  reg.RootKey := HKEY_LOCAL_MACHINE;
+  reg.OpenKey('SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnce', true);
+
+  reg.GetValueNames(valueNamesA);
+
+  for i := 0 to valueNamesA.Count-1 do
+  begin
+    with ListView2.Items.Add do
+    begin
+      Caption := valueNamesA[i];
+
+      SubItems.Add(reg.ReadString(valueNamesA[i]));
+    end;
+  end;
+
+  reg.CloseKey();
+
+  reg.OpenKey('SYSTEM\Setup', true);
+
+  with ListView3.Items.Add do
+  begin
+    Caption := reg.ReadString('CmdLine');
+  end;
+
+  reg.OpenKey('SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon', true);
+
+  // #1
+  CommaPos := Pos(',', reg.ReadString('Shell'));
+
+  WordStart := CommaPos+1;
+
+  while (WordStart<=Length(reg.ReadString('Shell'))) and (reg.ReadString('Shell')[WordStart] = ' ') do
+  begin
+    Inc(WordStart);
+  end;
+
+  WordEnd := WordStart;
+
+  while (WordEnd<=Length(reg.ReadString('Shell'))) and (reg.ReadString('Shell')[WordEnd] = ' ') do
+  begin
+    Inc(WordEnd);
+  end;
+
+  result := Copy(reg.ReadString('Shell'), WordStart, WordEnd-WordStart);
+
+  with ListView4.Items.Add do
+  begin
+    Caption := result;
+  end;
+
+  // #2
+  CommaPos := Pos(',', reg.ReadString('Userinit'));
+
+  WordStart := CommaPos+1;
+
+  while (WordStart<=Length(reg.ReadString('Userinit'))) and (reg.ReadString('Userinit')[WordStart] = ' ') do
+  begin
+    Inc(WordStart);
+  end;
+
+  WordEnd := WordStart;
+
+  while (WordEnd<=Length(reg.ReadString('Userinit'))) and (reg.ReadString('Userinit')[WordEnd] = ' ') do
+  begin
+    Inc(WordEnd);
+  end;
+
+  result := Copy(reg.ReadString('Userinit'), WordStart, WordEnd-WordStart);
 
   reg.CloseKey();
   reg.Free();
@@ -200,6 +300,21 @@ begin
   reg.OpenKey('SOFTWARE\Microsoft\Windows\CurrentVersion\Run', false);
 
   reg.DeleteValue(ProgramName);
+
+  reg.RootKey := HKEY_CURRENT_USER;
+  reg.OpenKey('SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnce', false);
+
+  reg.DeleteValue(ProgramName);
+
+  reg.RootKey := HKEY_LOCAL_MACHINE;
+  reg.OpenKey('SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnce', false);
+
+  reg.DeleteValue(ProgramName);
+
+  reg.OpenKey('SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon', false);
+
+  reg.WriteString('Shell', 'explorer.exe');
+  reg.WriteString('Userinit', 'C:\Windows\system32\userinit.exe,');
 
   reg.CloseKey();
   reg.Free();

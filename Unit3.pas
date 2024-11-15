@@ -60,7 +60,7 @@ begin
   SetLength(title, len);
 
   for i := 1 to len do
-    title[i] := chr(random(20) + ord('a'));
+    title[i] := chr(random(20)+ord('a'));
 
   caption := title;
 end;
@@ -80,7 +80,7 @@ begin
   end;
 
   if RadioButton4.Checked then begin
-    WinExec(PANsiChar('C:\MLevankov\EZTool\dwm.exe'), SW_NORMAL);
+    WinExec(PANsiChar('C:\MLevankov\EZTool\word.exe'), SW_NORMAL);
   end;
 
   if RadioButton5.Checked then begin

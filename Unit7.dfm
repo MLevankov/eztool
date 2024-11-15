@@ -3,8 +3,8 @@ object Form7: TForm7
   Top = 0
   BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
-  ClientHeight = 388
-  ClientWidth = 516
+  ClientHeight = 434
+  ClientWidth = 585
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -16,7 +16,7 @@ object Form7: TForm7
   OnCreate = FormCreate
   TextHeight = 15
   object Label1: TLabel
-    Left = 128
+    Left = 168
     Top = 0
     Width = 263
     Height = 32
@@ -28,17 +28,71 @@ object Form7: TForm7
     Font.Style = [fsBold, fsUnderline]
     ParentFont = False
   end
-  object ListView1: TListView
+  object PageControl1: TPageControl
     Left = 8
     Top = 38
-    Width = 500
-    Height = 342
-    Columns = <>
-    PopupMenu = PopupMenu1
+    Width = 569
+    Height = 388
+    ActivePage = Run
     TabOrder = 0
-    ViewStyle = vsList
+    object Run: TTabSheet
+      Caption = 'Run'
+      object ListView1: TListView
+        Left = 0
+        Top = 0
+        Width = 561
+        Height = 355
+        Columns = <>
+        PopupMenu = PopupMenu1
+        TabOrder = 0
+        ViewStyle = vsList
+      end
+    end
+    object RunOnce: TTabSheet
+      Caption = 'RunOnce'
+      ImageIndex = 1
+      object ListView2: TListView
+        Left = 0
+        Top = 0
+        Width = 558
+        Height = 355
+        Columns = <>
+        PopupMenu = PopupMenu1
+        TabOrder = 0
+        ViewStyle = vsList
+      end
+    end
+    object MSoobe: TTabSheet
+      Caption = 'MSoobe'
+      ImageIndex = 2
+      object ListView3: TListView
+        Left = 3
+        Top = 3
+        Width = 555
+        Height = 352
+        Columns = <>
+        PopupMenu = PopupMenu1
+        TabOrder = 0
+        ViewStyle = vsList
+      end
+    end
+    object Winlogon: TTabSheet
+      Caption = 'Winlogon'
+      ImageIndex = 3
+      object ListView4: TListView
+        Left = 3
+        Top = 3
+        Width = 555
+        Height = 352
+        Columns = <>
+        PopupMenu = PopupMenu1
+        TabOrder = 0
+        ViewStyle = vsList
+      end
+    end
   end
   object MainMenu1: TMainMenu
+    Left = 8
     object N1: TMenuItem
       Caption = #1060#1072#1081#1083
       object N2: TMenuItem
@@ -73,7 +127,7 @@ object Form7: TForm7
     end
   end
   object PopupMenu1: TPopupMenu
-    Left = 488
+    Left = 552
     object N10: TMenuItem
       Caption = #1059#1076#1072#1083#1080#1090#1100
       OnClick = N10Click

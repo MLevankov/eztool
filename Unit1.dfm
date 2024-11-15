@@ -3,7 +3,7 @@ object Form1: TForm1
   Top = 0
   BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
-  ClientHeight = 229
+  ClientHeight = 290
   ClientWidth = 496
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -38,8 +38,8 @@ object Form1: TForm1
     OnClick = Button1Click
   end
   object Button3: TButton
-    Left = 271
-    Top = 38
+    Left = 8
+    Top = 101
     Width = 217
     Height = 57
     Caption = #1047#1072#1087#1091#1089#1082' '#1089#1090#1086#1088#1086#1085#1085#1080#1093' '#1087#1088#1086#1075#1088#1072#1084#1084
@@ -48,7 +48,7 @@ object Form1: TForm1
   end
   object Button5: TButton
     Left = 143
-    Top = 164
+    Top = 227
     Width = 217
     Height = 57
     Caption = #1054' '#1087#1088#1086#1075#1088#1072#1084#1084#1077
@@ -57,7 +57,7 @@ object Form1: TForm1
   end
   object Button4: TButton
     Left = 8
-    Top = 101
+    Top = 164
     Width = 217
     Height = 57
     Caption = #1055#1088#1086#1074#1077#1088#1082#1072' '#1084#1086#1097#1085#1086#1089#1090#1080' '#1055#1050' ('#1073#1086#1085#1091#1089')'
@@ -72,5 +72,28 @@ object Form1: TForm1
     Caption = #1040#1074#1090#1086#1079#1072#1087#1091#1089#1082' '#1087#1088#1086#1075#1088#1072#1084#1084
     TabOrder = 4
     OnClick = Button2Click
+  end
+  object Button6: TButton
+    Left = 271
+    Top = 38
+    Width = 217
+    Height = 57
+    Caption = #1044#1080#1089#1087#1077#1090#1095#1077#1088' '#1079#1072#1076#1072#1095
+    TabOrder = 5
+    OnClick = Button6Click
+  end
+  object Button7: TButton
+    Left = 271
+    Top = 164
+    Width = 217
+    Height = 57
+    Caption = #1057#1084#1077#1085#1072' '#1086#1073#1086#1077#1074
+    TabOrder = 6
+    OnClick = Button7Click
+  end
+  object OpenDialog1: TOpenDialog
+    DefaultExt = 'png'
+    Filter = 'png '#1092#1072#1081#1083'|*.png|jpg '#1092#1072#1081#1083'|*.jpg|bmp '#1092#1072#1081#1083'|*.bmp'
+    Title = #1057#1084#1077#1085#1072' '#1086#1073#1086#1077#1074
   end
 end

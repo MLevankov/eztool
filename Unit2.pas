@@ -140,7 +140,7 @@ begin
   SetLength(title, len);
 
   for i := 1 to len do
-    title[i] := chr(random(20) + ord('a'));
+    title[i] := chr(random(20)+ord('a'));
 
   caption := title;
 end;
