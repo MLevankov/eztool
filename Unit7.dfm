@@ -13,6 +13,7 @@ object Form7: TForm7
   Font.Style = []
   Menu = MainMenu1
   Position = poScreenCenter
+  OnCloseQuery = FormCloseQuery
   OnCreate = FormCreate
   TextHeight = 15
   object Label1: TLabel
@@ -38,9 +39,9 @@ object Form7: TForm7
     object Run: TTabSheet
       Caption = 'Run'
       object ListView1: TListView
-        Left = 0
+        Left = 3
         Top = 0
-        Width = 561
+        Width = 555
         Height = 355
         Columns = <>
         PopupMenu = PopupMenu1
@@ -52,9 +53,9 @@ object Form7: TForm7
       Caption = 'RunOnce'
       ImageIndex = 1
       object ListView2: TListView
-        Left = 0
+        Left = 3
         Top = 0
-        Width = 558
+        Width = 555
         Height = 355
         Columns = <>
         PopupMenu = PopupMenu1
@@ -67,9 +68,9 @@ object Form7: TForm7
       ImageIndex = 2
       object ListView3: TListView
         Left = 3
-        Top = 3
+        Top = 0
         Width = 555
-        Height = 352
+        Height = 355
         Columns = <>
         PopupMenu = PopupMenu1
         TabOrder = 0
@@ -81,9 +82,9 @@ object Form7: TForm7
       ImageIndex = 3
       object ListView4: TListView
         Left = 3
-        Top = 3
+        Top = 0
         Width = 555
-        Height = 352
+        Height = 355
         Columns = <>
         PopupMenu = PopupMenu1
         TabOrder = 0
@@ -92,7 +93,6 @@ object Form7: TForm7
     end
   end
   object MainMenu1: TMainMenu
-    Left = 8
     object N1: TMenuItem
       Caption = #1060#1072#1081#1083
       object N2: TMenuItem
@@ -139,6 +139,13 @@ object Form7: TForm7
     object N11: TMenuItem
       Caption = #1054#1095#1080#1089#1090#1080#1090#1100' '#1074#1089#1077
       OnClick = N11Click
+    end
+    object N13: TMenuItem
+      Caption = '-'
+    end
+    object N14: TMenuItem
+      Caption = #1042#1099#1093#1086#1076
+      OnClick = N14Click
     end
   end
 end

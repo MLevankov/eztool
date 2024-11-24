@@ -13,6 +13,7 @@ object Form6: TForm6
   Font.Style = []
   Menu = MainMenu1
   Position = poScreenCenter
+  OnCloseQuery = FormCloseQuery
   OnCreate = FormCreate
   TextHeight = 15
   object Label1: TLabel
@@ -35,21 +36,13 @@ object Form6: TForm6
     Height = 15
     Caption = #1057#1090#1072#1090#1091#1089': '#1086#1078#1080#1076#1072#1085#1080#1077' '#1076#1077#1081#1089#1090#1074#1080#1081' '#1087#1086#1083#1100#1079#1086#1074#1072#1090#1077#1083#1103
   end
-  object ListBox1: TListBox
-    Left = 8
-    Top = 40
-    Width = 608
-    Height = 361
-    ItemHeight = 15
-    TabOrder = 0
-  end
   object CheckBox1: TCheckBox
     Left = 8
     Top = 407
     Width = 225
     Height = 17
     Caption = #1055#1086#1080#1089#1082' '#1080' '#1088#1072#1079#1073#1083#1086#1082#1080#1088#1086#1074#1082#1072' '#1086#1075#1088#1072#1085#1080#1095#1077#1085#1080#1081
-    TabOrder = 1
+    TabOrder = 0
     OnClick = CheckBox1Click
   end
   object Button1: TButton
@@ -58,8 +51,25 @@ object Form6: TForm6
     Width = 608
     Height = 43
     Caption = #1055#1086#1080#1089#1082' '#1086#1075#1088#1072#1085#1080#1095#1077#1085#1080#1081
-    TabOrder = 2
+    TabOrder = 1
     OnClick = Button1Click
+  end
+  object ListView1: TListView
+    Left = 8
+    Top = 38
+    Width = 608
+    Height = 363
+    Columns = <
+      item
+        AutoSize = True
+        Caption = #1054#1075#1088#1072#1085#1080#1095#1077#1085#1080#1077
+      end
+      item
+        AutoSize = True
+        Caption = #1055#1086#1076#1088#1086#1073#1085#1086#1089#1090#1080' '#1086#1073' '#1086#1075#1088#1072#1085#1080#1095#1077#1085#1080#1080
+      end>
+    TabOrder = 2
+    ViewStyle = vsReport
   end
   object MainMenu1: TMainMenu
     Left = 592

@@ -1,9 +1,10 @@
 object Form5: TForm5
   Left = 0
   Top = 0
+  Cursor = crHandPoint
   BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
-  ClientHeight = 276
+  ClientHeight = 226
   ClientWidth = 383
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -12,6 +13,7 @@ object Form5: TForm5
   Font.Name = 'Segoe UI'
   Font.Style = []
   Position = poScreenCenter
+  OnCloseQuery = FormCloseQuery
   OnCreate = FormCreate
   TextHeight = 15
   object Label1: TLabel
@@ -203,20 +205,19 @@ object Form5: TForm5
     Font.Style = [fsUnderline]
     ParentFont = False
   end
-  object Button1: TButton
-    Left = 8
+  object Label6: TLabel
+    Left = 98
     Top = 197
-    Width = 367
-    Height = 71
+    Width = 198
+    Height = 21
     Cursor = crHandPoint
-    Caption = #1057#1072#1081#1090' '#1072#1074#1090#1086#1088#1072
-    Font.Charset = RUSSIAN_CHARSET
+    Caption = 'https://mlevankov.taplink.ws'
+    Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -19
-    Font.Name = 'Segoe UI Semibold'
-    Font.Style = [fsBold, fsUnderline]
+    Font.Height = -16
+    Font.Name = 'Segoe UI'
+    Font.Style = [fsUnderline]
     ParentFont = False
-    TabOrder = 0
-    OnClick = Button1Click
+    OnClick = Label6Click
   end
 end

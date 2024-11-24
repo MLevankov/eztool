@@ -39,6 +39,7 @@ type
     procedure N6Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure N8Click(Sender: TObject);
+    procedure FormCloseQuery(Sender: TObject; var CanClose: boolean);
   private
     { Private declarations }
   public
@@ -54,7 +55,7 @@ implementation
 
 {$R *.dfm}
 
-uses Unit5, Unit6;
+uses Unit1, Unit5, Unit6;
 
 procedure TForm2.Button1Click(Sender: TObject);
 var reg: TRegistry;
@@ -130,6 +131,19 @@ begin
   end;
 
   reg.Free();
+end;
+
+procedure TForm2.FormCloseQuery(Sender: TObject; var CanClose: boolean);
+begin
+  Form1.Button1.Enabled := true;
+  Form1.Button2.Enabled := true;
+  Form1.Button3.Enabled := true;
+  Form1.Button4.Enabled := true;
+  Form1.Button5.Enabled := true;
+  Form1.Button6.Enabled := true;
+  Form1.Button7.Enabled := true;
+
+  CanClose := true;
 end;
 
 procedure TForm2.FormCreate(Sender: TObject);

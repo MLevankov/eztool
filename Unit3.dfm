@@ -13,6 +13,7 @@ object Form3: TForm3
   Font.Style = []
   Menu = MainMenu1
   Position = poScreenCenter
+  OnCloseQuery = FormCloseQuery
   OnCreate = FormCreate
   TextHeight = 15
   object Label1: TLabel

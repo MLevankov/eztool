@@ -55,22 +55,13 @@ object Form1: TForm1
     TabOrder = 2
     OnClick = Button5Click
   end
-  object Button4: TButton
-    Left = 8
-    Top = 164
-    Width = 217
-    Height = 57
-    Caption = #1055#1088#1086#1074#1077#1088#1082#1072' '#1084#1086#1097#1085#1086#1089#1090#1080' '#1055#1050' ('#1073#1086#1085#1091#1089')'
-    TabOrder = 3
-    OnClick = Button4Click
-  end
   object Button2: TButton
     Left = 271
     Top = 101
     Width = 217
     Height = 57
     Caption = #1040#1074#1090#1086#1079#1072#1087#1091#1089#1082' '#1087#1088#1086#1075#1088#1072#1084#1084
-    TabOrder = 4
+    TabOrder = 3
     OnClick = Button2Click
   end
   object Button6: TButton
@@ -79,17 +70,26 @@ object Form1: TForm1
     Width = 217
     Height = 57
     Caption = #1044#1080#1089#1087#1077#1090#1095#1077#1088' '#1079#1072#1076#1072#1095
-    TabOrder = 5
+    TabOrder = 4
     OnClick = Button6Click
   end
   object Button7: TButton
-    Left = 271
+    Left = 8
     Top = 164
     Width = 217
     Height = 57
     Caption = #1057#1084#1077#1085#1072' '#1086#1073#1086#1077#1074
-    TabOrder = 6
+    TabOrder = 5
     OnClick = Button7Click
+  end
+  object Button4: TButton
+    Left = 271
+    Top = 164
+    Width = 217
+    Height = 57
+    Caption = #1059#1087#1088#1072#1074#1083#1077#1085#1080#1077' '#1087#1072#1085#1077#1083#1100#1102' '#1079#1072#1076#1072#1095
+    TabOrder = 6
+    OnClick = Button4Click
   end
   object OpenDialog1: TOpenDialog
     DefaultExt = 'png'

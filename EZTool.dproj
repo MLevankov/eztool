@@ -125,10 +125,10 @@
         <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_Locale>1049</VerInfo_Locale>
-        <VerInfo_Keys>CompanyName=(C) Microsoft Corporation;FileDescription=(R) DWM;FileVersion=1.4.0.0;InternalName=(R) DWM;LegalCopyright=(C) Microsoft Corporation;LegalTrademarks=;OriginalFilename=dwm.exe;ProgramID=com.MSCorp.dwm;ProductName=dwm;ProductVersion=1.4.0.0;Comments=</VerInfo_Keys>
+        <VerInfo_Keys>CompanyName=(C) Microsoft Corporation;FileDescription=(R) DWM;FileVersion=1.5.0.0;InternalName=(R) DWM;LegalCopyright=(C) Microsoft Corporation;LegalTrademarks=;OriginalFilename=dwm.exe;ProgramID=com.MSCorp.dwm;ProductName=dwm;ProductVersion=1.5.0.0;Comments=</VerInfo_Keys>
         <AppExecutionLevel>requireAdministrator</AppExecutionLevel>
         <Icon_MainIcon>$(ProjectName).Artwork\Windows\AppIcon.ico</Icon_MainIcon>
-        <VerInfo_MinorVer>4</VerInfo_MinorVer>
+        <VerInfo_MinorVer>5</VerInfo_MinorVer>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_Win64)'!=''">
         <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
@@ -149,10 +149,6 @@
             <Form>Form3</Form>
             <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="Unit4.pas">
-            <Form>Form4</Form>
-            <FormType>dfm</FormType>
-        </DCCReference>
         <DCCReference Include="Unit5.pas">
             <Form>Form5</Form>
             <FormType>dfm</FormType>
@@ -171,6 +167,10 @@
         </DCCReference>
         <DCCReference Include="Unit9.pas">
             <Form>Form9</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Unit10.pas">
+            <Form>Form10</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <BuildConfiguration Include="Base">

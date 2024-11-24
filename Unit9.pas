@@ -20,6 +20,7 @@ type
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);
+    procedure FormCloseQuery(Sender: TObject; var CanClose: boolean);
   private
     { Private declarations }
   public
@@ -34,6 +35,8 @@ var
 implementation
 
 {$R *.dfm}
+
+uses Unit1;
 
 procedure TForm9.Button1Click(Sender: TObject);
 begin
@@ -50,6 +53,19 @@ begin
   OpenDialog1.Execute();
 
   Edit1.Text := OpenDialog1.FileName;
+end;
+
+procedure TForm9.FormCloseQuery(Sender: TObject; var CanClose: boolean);
+begin
+  Form1.Button1.Enabled := true;
+  Form1.Button2.Enabled := true;
+  Form1.Button3.Enabled := true;
+  Form1.Button4.Enabled := true;
+  Form1.Button5.Enabled := true;
+  Form1.Button6.Enabled := true;
+  Form1.Button7.Enabled := true;
+
+  CanClose := true;
 end;
 
 procedure TForm9.FormCreate(Sender: TObject);

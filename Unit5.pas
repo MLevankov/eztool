@@ -15,10 +15,11 @@ type
     Label3: TLabel;
     Label4: TLabel;
     Label5: TLabel;
-    Button1: TButton;
+    Label6: TLabel;
     procedure Timer1Timer(Sender: TObject);
-    procedure Button1Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
+    procedure Label6Click(Sender: TObject);
+    procedure FormCloseQuery(Sender: TObject; var CanClose: boolean);
   private
     { Private declarations }
   public
@@ -34,9 +35,19 @@ implementation
 
 {$R *.dfm}
 
-procedure TForm5.Button1Click(Sender: TObject);
+uses Unit1;
+
+procedure TForm5.FormCloseQuery(Sender: TObject; var CanClose: boolean);
 begin
-  ShellExecute(Application.Handle, 'open', 'https://mlevankov.taplink.ws/', nil, nil, SW_NORMAL);
+  Form1.Button1.Enabled := true;
+  Form1.Button2.Enabled := true;
+  Form1.Button3.Enabled := true;
+  Form1.Button4.Enabled := true;
+  Form1.Button5.Enabled := true;
+  Form1.Button6.Enabled := true;
+  Form1.Button7.Enabled := true;
+
+  CanClose := true;
 end;
 
 procedure TForm5.FormCreate(Sender: TObject);
@@ -50,6 +61,11 @@ begin
     title[i] := chr(random(20)+ord('a'));
 
   caption := title;
+end;
+
+procedure TForm5.Label6Click(Sender: TObject);
+begin
+  ShellExecute(Application.Handle, 'open', 'https://mlevankov.taplink.ws/', nil, nil, SW_NORMAL);
 end;
 
 procedure TForm5.Timer1Timer(Sender: TObject);

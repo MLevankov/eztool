@@ -31,9 +31,7 @@ type
     N18: TMenuItem;
     N19: TMenuItem;
     N20: TMenuItem;
-    N22: TMenuItem;
     ListView1: TListView;
-    N15: TMenuItem;
     N16: TMenuItem;
     procedure FormCreate(Sender: TObject);
     procedure LoadProcesses;
@@ -48,6 +46,8 @@ type
     procedure N14Click(Sender: TObject);
     procedure N17Click(Sender: TObject);
     procedure N20Click(Sender: TObject);
+    procedure N16Click(Sender: TObject);
+    procedure FormCloseQuery(Sender: TObject; var CanClose: boolean);
   private
     { Private declarations }
   public
@@ -63,7 +63,20 @@ implementation
 
 {$R *.dfm}
 
-uses Unit5, Unit9;
+uses Unit1, Unit5, Unit9;
+
+procedure TForm8.FormCloseQuery(Sender: TObject; var CanClose: boolean);
+begin
+  Form1.Button1.Enabled := true;
+  Form1.Button2.Enabled := true;
+  Form1.Button3.Enabled := true;
+  Form1.Button4.Enabled := true;
+  Form1.Button5.Enabled := true;
+  Form1.Button6.Enabled := true;
+  Form1.Button7.Enabled := true;
+
+  CanClose := true;
+end;
 
 procedure TForm8.FormCreate(Sender: TObject);
 var i: integer;
@@ -81,28 +94,35 @@ begin
 end;
 
 procedure TForm8.LoadProcesses;
-var hProc: THandle;
-    procID: array[0..1023] of DWORD;
-    procName: array[0..MAX_PATH-1] of Char;
-    cbNeeded: DWORD;
-    i: DWORD;
+var
+  procList: array[0..1023] of DWORD;
+  procCount: DWORD;
+  i: DWORD;
+  procHandle: THandle;
+  procName: array[0..MAX_PATH-1] of Char;
 begin
-  ListView1.Clear();
+  ListView1.Items.Clear();
 
-  if EnumProcesses(@procID, sizeof(procID), cbNeeded) then
+  if EnumProcesses(@procList, sizeof(procList), procCount) then
   begin
-    for i := 0 to (cbNeeded div sizeof(DWORD))-1 do
+    procCount := procCount div sizeof(DWORD);
+
+    for i := 0 to procCount-1 do
     begin
-      hProc := OpenProcess(PROCESS_QUERY_INFORMATION or PROCESS_VM_READ, false, procID[i]);
+      procHandle := OpenProcess(PROCESS_QUERY_INFORMATION or PROCESS_VM_READ, false, procList[i]);
 
-      if hProc<>0 then
-      begin
-        if GetModuleFileNameEx(hProc, 0, procName, sizeof(procName) div sizeof(char))>0 then
+      try
+        if GetModuleFileNameEx(procHandle, 0, procName, sizeof(procName) div sizeof(char)) > 0 then
         begin
-          ListView1.Items.Add.Caption := procName;
-        end;
+          with ListView1.Items.Add do
+          begin
+            Caption := procName;
 
-        CloseHandle(hProc);
+            SubItems.Add(Format('%d', [procList[i]]));
+          end;
+        end;
+      finally
+        CloseHandle(procHandle);
       end;
     end;
   end;
@@ -116,6 +136,11 @@ end;
 procedure TForm8.N14Click(Sender: TObject);
 begin
   Form5.Show();
+end;
+
+procedure TForm8.N16Click(Sender: TObject);
+begin
+  Application.Terminate();
 end;
 
 procedure TForm8.N17Click(Sender: TObject);

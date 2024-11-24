@@ -33,6 +33,8 @@ type
     ListView3: TListView;
     Winlogon: TTabSheet;
     ListView4: TListView;
+    N13: TMenuItem;
+    N14: TMenuItem;
     procedure FormCreate(Sender: TObject);
     procedure N6Click(Sender: TObject);
     procedure N8Click(Sender: TObject);
@@ -44,6 +46,8 @@ type
     procedure N12Click(Sender: TObject);
     procedure N10Click(Sender: TObject);
     procedure N11Click(Sender: TObject);
+    procedure N14Click(Sender: TObject);
+    procedure FormCloseQuery(Sender: TObject; var CanClose: boolean);
   private
     { Private declarations }
   public
@@ -59,7 +63,20 @@ implementation
 
 {$R *.dfm}
 
-uses Unit5;
+uses Unit1, Unit5;
+
+procedure TForm7.FormCloseQuery(Sender: TObject; var CanClose: boolean);
+begin
+  Form1.Button1.Enabled := true;
+  Form1.Button2.Enabled := true;
+  Form1.Button3.Enabled := true;
+  Form1.Button4.Enabled := true;
+  Form1.Button5.Enabled := true;
+  Form1.Button6.Enabled := true;
+  Form1.Button7.Enabled := true;
+
+  CanClose := true;
+end;
 
 procedure TForm7.FormCreate(Sender: TObject);
 var i: integer;
@@ -245,6 +262,11 @@ end;
 procedure TForm7.N12Click(Sender: TObject);
 begin
   LoadStartup;
+end;
+
+procedure TForm7.N14Click(Sender: TObject);
+begin
+  Application.Terminate();
 end;
 
 procedure TForm7.N2Click(Sender: TObject);

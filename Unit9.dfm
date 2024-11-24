@@ -11,6 +11,7 @@ object Form9: TForm9
   Font.Name = 'Segoe UI'
   Font.Style = []
   Position = poScreenCenter
+  OnCloseQuery = FormCloseQuery
   OnCreate = FormCreate
   TextHeight = 15
   object Label1: TLabel

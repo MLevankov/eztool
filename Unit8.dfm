@@ -13,6 +13,7 @@ object Form8: TForm8
   Font.Style = []
   Menu = MainMenu1
   Position = poScreenCenter
+  OnCloseQuery = FormCloseQuery
   OnCreate = FormCreate
   TextHeight = 15
   object Label1: TLabel
@@ -35,7 +36,12 @@ object Form8: TForm8
     Height = 388
     Columns = <
       item
+        AutoSize = True
         Caption = #1048#1084#1103' '#1087#1088#1086#1094#1077#1089#1089#1072
+      end
+      item
+        AutoSize = True
+        Caption = 'ID '#1087#1088#1086#1094#1077#1089#1089#1072
       end>
     PopupMenu = PopupMenu1
     TabOrder = 0
@@ -113,14 +119,9 @@ object Form8: TForm8
     object N19: TMenuItem
       Caption = '-'
     end
-    object N22: TMenuItem
-      Caption = #1056#1072#1089#1087#1086#1083#1086#1078#1077#1085#1080#1077' '#1092#1072#1081#1083#1072
-    end
-    object N15: TMenuItem
-      Caption = '-'
-    end
     object N16: TMenuItem
       Caption = #1042#1099#1093#1086#1076
+      OnClick = N16Click
     end
   end
 end
